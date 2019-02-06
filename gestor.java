@@ -35,11 +35,7 @@ public class gestor {
 		
 		Next carros[]= new Next[5];
 		
-		carros[0].setPcarro1();
-		carros[1].setPcarro2();
-		carros[2].setPcarro3();
-		carros[3].setPcarro4();
-		carros[4].setPcarro5();
+		carros[0].setPcarro();
 		
 		while (i<5) {
 			
