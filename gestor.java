@@ -33,7 +33,7 @@ public class gestor {
 		System.out.print("Quantos carros para test drive tem disponivel?");
 		x=read.nextInt();
 		
-		Next carros[]= new[5];
+		Next carros[]= new Next[5];
 		
 		carros[0].setPcarro1();
 		carros[1].setPcarro2();
@@ -82,4 +82,3 @@ public class gestor {
 	}
 
 }
-
