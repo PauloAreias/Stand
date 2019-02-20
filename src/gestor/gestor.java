@@ -1,5 +1,6 @@
 package gestor;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class gestor {
@@ -24,13 +25,21 @@ public class gestor {
 	
 	public static void Criar() {
 		
+		String n ;
 		concessionario c1 = new concessionario();
 		Scanner read = new Scanner(System.in);
+		ArrayList<String> list = new ArrayList<>();
 		
 		System.out.print("Distrito: ");
-		c1.setDistrito(read.nextLine());
+		n= read.nextLine();
+		c1.setDistrito(n);
 		
-		System.out.println("1) "+c1.getDistrito());
+		list.add(n);
+		
+		
+		
+		System.out.println("1) "+ list);
+		
 		}
 	
 	
