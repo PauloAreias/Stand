@@ -1,4 +1,4 @@
-package gestor;
+package src.gestor;
 
 public class dadosC {
 
