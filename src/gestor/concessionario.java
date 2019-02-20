@@ -1,20 +1,21 @@
 package src.gestor;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class concessionario {
 	
 	private String distrito;
-	private int pcarro;
+	private ArrayList<Integer> pcarro;
 	
 	public concessionario(){
 		
 		this.distrito=null;
-		this.pcarro=0;
+		this.pcarro=null;
 		
 	}
 	
-	public concessionario(String distrito, String carro1,int pcarro) {
+	public concessionario(String distrito,ArrayList<Integer> pcarro) {
 		
 		this.distrito=distrito;
 		this.pcarro=pcarro;
@@ -29,23 +30,25 @@ public class concessionario {
 		this.distrito=distrito;
 	}
 	
-	public int getPcarro() {
+	public ArrayList<Integer> getPcarro() {
 		
 		return pcarro;
 	}
 	
-	public void setPcarro(int pcarro1) {
+	public void setPcarro(ArrayList<Integer> pcarro1) {
 		
 		this.pcarro=pcarro1;
 		
 	}
+
+	
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((distrito == null) ? 0 : distrito.hashCode());
-		result = prime * result + pcarro;
 		return result;
 	}
 
@@ -63,11 +66,17 @@ public class concessionario {
 				return false;
 		} else if (!distrito.equals(other.distrito))
 			return false;
-		if (pcarro != other.pcarro)
-			return false;
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Concessionario: " + distrito + ", Potencia dos Carros = " + pcarro ;
+	}
+
+	
+
+	
 	
 	
 	

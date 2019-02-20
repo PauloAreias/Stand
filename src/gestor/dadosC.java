@@ -5,6 +5,12 @@ public class dadosC {
 	private concessionario lista[]= new concessionario[18];
 	private int contador;
 	
+	public dadosC(){
+		
+		this.contador=0;
+		
+	}
+	
 	public dadosC(concessionario[] dados) {
 		this.contador=0;
 		this.lista=dados;
@@ -49,7 +55,7 @@ public class dadosC {
 		
 		if(pos==contador-1) {
 			lista[pos].setDistrito(null);
-			lista[pos].setPcarro(0);
+			lista[pos].setPcarro(null);
 		}
 		
 		else {
