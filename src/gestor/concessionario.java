@@ -1,4 +1,4 @@
-package gestor;
+package src.gestor;
 
 import java.util.Objects;
 
