@@ -29,40 +29,58 @@ public class gestor {
 	public static void Criar(dadosC dados) {
 		
 		int n,i=0,pc;
+		String m;
 		concessionario c1 = new concessionario();
 		Scanner read = new Scanner(System.in);
 		ArrayList<Integer> list = new ArrayList<>();
+		ArrayList <String> list2 = new ArrayList<>();
 		
-		System.out.print("Distrito: ");
+		System.out.print("Digite o Distrito onde vai criar o concessionario: ");
 		c1.setDistrito(read.nextLine());
 		
-		
-		System.out.print("Quantos carros tem o concessionario? ");
+		System.out.print("Quantos carros tem o concessionario? (máx: 5): ");
 		n= read.nextInt();
-		
-		while (i<n) {
-			System.out.print("Potencia do Carro "+(i+1)+": ");
-			pc=read.nextInt();
+		if (n<=5 || n>0) {
+			while (i<n) {
+				System.out.println("Marcas dos carros sem espaços (ex:. Land-Rover)");
+				System.out.print("Marca do Carro "+(i+1)+": ");
+				m=read.next();
+				list2.add(m);
+				c1.setMarca(list2);
+				
+				System.out.print("Potencia do Carro "+(i+1)+": ");
+				pc=read.nextInt();
+				
+				list.add(pc);
+				
+				c1.setPcarro(list);
+				
+				
+				i++;
+				
+				
+			}
 			
-			list.add(pc);
+			dados.addConcessionario(c1);
 			
-			c1.setPcarro(list);
-			
-			
-			i++;
-			
-			
+			System.out.println("Criado com Sucesso!");
+		}
+		else {
+			System.out.println("OPÇÃO INVALIDA");
 		}
 		
 		
 		
-		dados.addConcessionario(c1);
 		
 		
 		
 		
-		System.out.println(c1.getDistrito());
-		System.out.println("Potencia dos carros "+c1.getPcarro());
+		
+		
+		
+		/*System.out.println(c1.getDistrito());
+		System.out.println("Marca dos carros "+c1.getMarca());
+		System.out.println("Potencia dos carros "+c1.getPcarro());*/
 		
 		}
 	
@@ -90,6 +108,36 @@ public class gestor {
 	        }
 	}
 	
+	
+	public static void CriarCliente(dadosC dados2) {
+		
+		cliente c1 = new cliente();
+		Scanner read = new Scanner(System.in);
+		
+		System.out.print("Digite o seu primiero e ultimo Nome: ");
+		c1.setName(read.nextLine());
+		
+		
+		System.out.print("Digite a sua Idade: ");
+		c1.setIdade(read.nextLine());
+		
+		System.out.print("Digite a sua morada: ");
+		c1.setAdress(read.nextLine());
+		
+		System.out.print("Data de Nascimento (ex:. 10-02-1997) ");
+		c1.setData(read.nextLine());
+		
+		
+		dados2.addCliente(c1);
+		
+		
+		
+		System.out.println("Criado com Sucesso!");
+		
+		System.out.print(c1);
+		
+		}
+	
 			
 	
 	
@@ -112,6 +160,7 @@ public class gestor {
 				
 				break;
 			case 2:
+				CriarCliente(newdados);
 				break;
 			case 3:
 				break;

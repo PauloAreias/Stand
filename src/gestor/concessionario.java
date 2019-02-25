@@ -6,20 +6,22 @@ import java.util.Objects;
 public class concessionario {
 	
 	private String distrito;
+	private ArrayList <String> marca;
 	private ArrayList<Integer> pcarro;
 	
 	public concessionario(){
 		
 		this.distrito=null;
 		this.pcarro=null;
+		this.marca=null;
 		
 	}
 	
-	public concessionario(String distrito,ArrayList<Integer> pcarro) {
+	public concessionario(String distrito,ArrayList<Integer> pcarro,ArrayList<String> marca) {
 		
 		this.distrito=distrito;
 		this.pcarro=pcarro;
-		
+		this.marca= marca;
 	}
 	
 	public String getDistrito() {
@@ -38,6 +40,17 @@ public class concessionario {
 	public void setPcarro(ArrayList<Integer> pcarro1) {
 		
 		this.pcarro=pcarro1;
+		
+	}
+	
+public ArrayList<String> getMarca() {
+		
+		return marca;
+	}
+	
+	public void setMarca(ArrayList<String> marca) {
+		
+		this.marca=marca;
 		
 	}
 
@@ -71,7 +84,7 @@ public class concessionario {
 
 	@Override
 	public String toString() {
-		return "Concessionario: " + distrito + ", Potencia dos Carros = " + pcarro ;
+		return "Concessionario: " + distrito + " Marcas: " + marca + ", Potencia dos Carros = " + pcarro ;
 	}
 
 	
