@@ -1,24 +1,27 @@
 package src.gestor;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class concessionario {
 	
 	private String distrito;
-	private int pcarro;
+	private ArrayList <String> marca;
+	private ArrayList<Integer> pcarro;
 	
 	public concessionario(){
 		
 		this.distrito=null;
-		this.pcarro=0;
+		this.pcarro=null;
+		this.marca=null;
 		
 	}
 	
-	public concessionario(String distrito, String carro1,int pcarro) {
+	public concessionario(String distrito,ArrayList<Integer> pcarro,ArrayList<String> marca) {
 		
 		this.distrito=distrito;
 		this.pcarro=pcarro;
-		
+		this.marca= marca;
 	}
 	
 	public String getDistrito() {
@@ -29,23 +32,36 @@ public class concessionario {
 		this.distrito=distrito;
 	}
 	
-	public int getPcarro() {
+	public ArrayList<Integer> getPcarro() {
 		
 		return pcarro;
 	}
 	
-	public void setPcarro(int pcarro1) {
+	public void setPcarro(ArrayList<Integer> pcarro1) {
 		
 		this.pcarro=pcarro1;
 		
 	}
+	
+public ArrayList<String> getMarca() {
+		
+		return marca;
+	}
+	
+	public void setMarca(ArrayList<String> marca) {
+		
+		this.marca=marca;
+		
+	}
+
+	
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((distrito == null) ? 0 : distrito.hashCode());
-		result = prime * result + pcarro;
 		return result;
 	}
 
@@ -63,11 +79,31 @@ public class concessionario {
 				return false;
 		} else if (!distrito.equals(other.distrito))
 			return false;
-		if (pcarro != other.pcarro)
-			return false;
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Concessionario: " + distrito  ;
+	}
+	
+	public void listaTodosConcessionario() {
+		
+		int i=0;
+		
+		while(i < this.marca.size()) {
+			System.out.println ("Marca: " + this.marca.get(i)+ " Potencia: " + this.pcarro.get(i));
+			i++;
+			
+		}
+		
+
+		
+	}
+
+	
+
+	
 	
 	
 	
