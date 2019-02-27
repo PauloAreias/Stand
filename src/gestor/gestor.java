@@ -14,10 +14,9 @@ public class gestor {
         System.out.println( "Menu: " ) ;  
         System.out.println( "1 - Registar Concessionario" ) ;  
         System.out.println( "2 - Registar Cliente " ) ;  
-        System.out.println( "3 - Registar Carro de demonstração " ) ; 
-        System.out.println( "4 - Consultar Concessionario" ) ;  
-        System.out.println( "5 - Consultar Cliente " ) ;  
-        System.out.println( "6 - Consultar Carros de demonstração");
+        System.out.println( "3 - Consultar Concessionario" ) ;  
+        System.out.println( "4 - Consultar Cliente " ) ;  
+        System.out.println( "5 - Test Drive");
         System.out.println( "0 - Sair" ) ; 
        
         
@@ -38,7 +37,7 @@ public class gestor {
 		System.out.print("Digite o Distrito onde vai criar o concessionario: ");
 		c1.setDistrito(read.nextLine());
 		
-		System.out.print("Quantos carros tem o concessionario? (máx: 5): ");
+		System.out.print("Quantos carros de Test Drive vai ter? (máx: 5): ");
 		n= read.nextInt();
 		if (n<=5 || n>0) {
 			while (i<n) {
@@ -97,14 +96,15 @@ public class gestor {
 	        pos=dados.existe(c1);
 	        if (pos==-1)
 	        {
-	            System.out.println("esse nome não existe");
+	            System.out.println("esse distrito não existe");
 	            return(-1);
 	        }
 	        else
 	        {
 	            c1=dados.getDados(pos);
 	            System.out.println(c1.toString());
-	            return(pos); 
+	            c1.listaTodosConcessionario();
+	            return (0);
 	        }
 	}
 	
@@ -134,9 +134,32 @@ public class gestor {
 		
 		System.out.println("Criado com Sucesso!");
 		
-		System.out.print(c1);
-		
 		}
+	
+	
+	public static int ConsultaCliente(dadosC dados2) {
+		
+		 int pos=0;
+	        Scanner read= new Scanner(System.in);
+	        cliente c1 =new cliente();
+	        
+	        
+	        
+	        System.out.print("Nome: ");
+	        c1.setName(read.nextLine());
+	        pos=dados2.existe2(c1);
+	        if (pos==-1)
+	        {
+	            System.out.println("esse nome não existe");
+	            return(-1);
+	        }
+	        else
+	        {
+	            c1=dados2.getDados2(pos);
+	            System.out.println(c1.toString());
+	            return(pos); 
+	        }
+	}
 	
 			
 	
@@ -163,13 +186,12 @@ public class gestor {
 				CriarCliente(newdados);
 				break;
 			case 3:
-				break;
-			case 4:
 				Consulta(newdados);
 				break;
-			case 5:
+			case 4:
+				ConsultaCliente(newdados);
 				break;
-			case 6:
+			case 5:
 				break;
 			case 0:
 				break;

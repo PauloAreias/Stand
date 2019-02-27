@@ -6,8 +6,8 @@ public class dadosC {
 
 	private concessionario lista[]= new concessionario[18];
 	private int contador;
-	//private ArrayList <cliente> lista2 = new ArrayList<>();
-	private cliente lista2[]= new cliente[100];
+	private ArrayList <cliente> lista2 = new ArrayList<>();
+	//private cliente lista2[]= new cliente[100];
 	private int contador2;
 	
 	public dadosC(){
@@ -18,15 +18,15 @@ public class dadosC {
 		
 	}
 	
-	/*public dadosC(ArrayList <cliente> dados2) {
-		this.contador2=0;
-		this.lista2=dados2;
-	}*/
-	
-	public dadosC(cliente[] dados2) {
+	public dadosC(ArrayList <cliente> dados2) {
 		this.contador2=0;
 		this.lista2=dados2;
 	}
+	
+	/*public dadosC(cliente[] dados2) {
+		this.contador2=0;
+		this.lista2=dados2;
+	}*/
 	
 	
 	public dadosC(concessionario[] dados) {
@@ -113,11 +113,11 @@ public class dadosC {
 	
 	
 	
-public int existe(cliente cl) {
+public int existe2(cliente cl) {
 		
 		int enc=0,i=0;
 		while(enc==0 && i<contador2){
-			if(lista[i].equals(cl)) {
+			if(lista2.get(i).equals(cl)) {
 				enc=1;
 			}
 			else {
@@ -135,8 +135,8 @@ public int existe(cliente cl) {
 	}
 	
 	public void addCliente(cliente conta) {
-		if (existe(conta)==-1) {
-			this.lista2[contador2]=conta;
+		if (existe2(conta)==-1) {
+			this.lista2.add(conta);
 			contador2++;
 		}
 		else {
@@ -148,18 +148,21 @@ public int existe(cliente cl) {
 	
 	public void eliminarCl(cliente cli) {
 		int pos,i;
-		pos=existe(cli);
+		pos=existe2(cli);
 		
 		if(pos==contador2-1) {
-			lista2[pos].setName(null);
-			lista2[pos].setData(null);
-			lista2[pos].setAdress(null);
-			lista2[pos].setIdade(null);
+			lista2.get(pos).setName(null);
+			lista2.get(pos).setData(null);
+			lista2.get(pos).setAdress(null);
+			lista2.get(pos).setIdade(null);
 		}
 		
 		else {
 			for(i=pos;i<contador2-1;i++) {
-				lista2[pos]=lista2[pos+1];
+				cliente x,y;
+				x=lista2.get(pos);
+				y=lista2.get(pos+1);
+			
 			}
 		}
 		
@@ -168,14 +171,14 @@ public int existe(cliente cl) {
 	
 	public void atualizarCli(int pos, cliente con) {
 		if (contador2>=pos) {
-			lista2[pos]=con;
+			con=lista2.get(pos);
 		}
 	}
 	
 	public cliente getDados2(int pos) {
 		
 		if(contador2>=pos) {
-			return (this.lista2[pos]);
+			return (this.lista2.get(pos));
 		}
 		else {
 			return null;

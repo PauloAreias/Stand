@@ -1,7 +1,5 @@
 package src.gestor;
 
-import java.util.ArrayList;
-import java.util.Objects;
 
 public class cliente {
 	
@@ -62,6 +60,8 @@ public class cliente {
 
 
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,7 +89,7 @@ public class cliente {
 
 	@Override
 	public String toString() {
-		return "cliente [name=" + name + ", idade=" + idade + ", data=" + data + ", adress=" + adress + "]";
+		return "Nome: " + name + " Idade: " + idade + " Data: " + data + " Morada: " + adress ;
 	}
 	
 	

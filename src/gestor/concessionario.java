@@ -84,7 +84,21 @@ public ArrayList<String> getMarca() {
 
 	@Override
 	public String toString() {
-		return "Concessionario: " + distrito + " Marcas: " + marca + ", Potencia dos Carros = " + pcarro ;
+		return "Concessionario: " + distrito  ;
+	}
+	
+	public void listaTodosConcessionario() {
+		
+		int i=0;
+		
+		while(i < this.marca.size()) {
+			System.out.println ("Marca: " + this.marca.get(i)+ " Potencia: " + this.pcarro.get(i));
+			i++;
+			
+		}
+		
+
+		
 	}
 
 	
